@@ -1,14 +1,16 @@
 import Link from 'next/link'
+import Router from 'next/router'
 import { Button, Tag } from 'antd'
 
 export default () => {
   return (
     <>
-      <Button>Click</Button>
-      <Tag color="red">This is a Tag</Tag>
-      <h1>This is Next.js</h1>
-      <Link href="/head">
-        <a>Head Page</a>
+      <Link href="/about">
+        <Button>Go to About</Button>
+      </Link>
+      <Tag onClick={() => Router.push('/post/comment')}>Click To Comment</Tag>
+      <Link href="/post/[pid]" as="/post/first">
+        <Button>Go to First Post</Button>
       </Link>
     </>
   )
